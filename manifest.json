@@ -1,5 +1,5 @@
 {
-  "scope": "http://localhost:1234/pomodoro/",
+  "scope": "https://steffan153.github.io/pomodoro/",
   "name": "Pomodoro",
   "short_name": "Pomo",
   "icons": [
