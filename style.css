@@ -1,0 +1,15 @@
+.progress-bar.session { 
+  background: limegreen;  
+}
+
+.progress-bar.break {
+  background: red;
+}
+
+.progress {
+  height: 40px;
+}
+
+.btn {
+  margin-top: 10px;
+}

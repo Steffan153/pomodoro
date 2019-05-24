@@ -1,0 +1,49 @@
+{
+  "scope": "http://localhost:1234/pomodoro/",
+  "name": "Pomodoro",
+  "short_name": "Pomo",
+  "icons": [
+    {
+      "src": "icons/tomato-48x48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "icons/tomato-144x144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "icons/tomato-128x128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "icons/tomato-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icons/tomato-256x256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "icons/tomato-384x384.png",
+      "type": "image/png",
+      "sizes": "384x384"
+    },
+    {
+      "src": "icons/tomato-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/pomodoro/",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#4ad469",
+  "description": "Pomodoro clock",
+  "dir": "ltr",
+  "lang": "en-US"
+}
