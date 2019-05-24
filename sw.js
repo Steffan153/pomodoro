@@ -1,4 +1,4 @@
-var CACHE_VERSION = 4;
+var CACHE_VERSION = 5;
 var CACHE_STATIC_NAME = 'static-v' + CACHE_VERSION;
 var CACHE_DYNAMIC_NAME = 'dynamic-v' + CACHE_VERSION;
 
@@ -16,7 +16,7 @@ self.addEventListener('install', function(event) {
         '/pomodoro/index.html',
         '/pomodoro/style.css',
         '/pomodoro/script.js',
-        'https://soundbible.com/grab.php?id=1619&type=mp3'
+        '/pomodoro/audio.mp3'
       ]);
     })
   );
