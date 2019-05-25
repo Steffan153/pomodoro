@@ -35,4 +35,5 @@ button .material-icons {
   bottom: 0;
   width: 100%;
   left: 0;
+  z-index: 2000;
 }
