@@ -21,3 +21,14 @@ button .material-icons {
 .mdl-progress {
   height: 15px;
 }
+
+#addHomeScreen {
+  color: white;
+  background-color: rgb(63,81,181);
+  padding: 10px 20px;
+  display: none; 
+  position: fixed; 
+  bottom: 0;
+  width: 100%;
+  left: 0;
+}

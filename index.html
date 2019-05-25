@@ -64,8 +64,14 @@
     </main>
   </div>
   <audio src="audio.mp3"></audio>
-  <div class="w-100 bg-primary text-white px-4 py-2" id="addHomeScreen" style="display: none; position: fixed; bottom: 0; left: 0">
-    Add "Pomodoro" to home screen? <button class="btn btn-success" title='Add "Pomodoro" to home screen?' onclick="deferredPrompt.prompt(); document.getElementById('addHomeScreen').style.display = 'none'">Add to home screen</button>
+  <div id="addHomeScreen">
+    Add "Pomodoro" to home screen? 
+    <button 
+      class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" 
+      title='Add "Pomodoro" to home screen?' 
+      onclick="deferredPrompt.prompt(); document.getElementById('addHomeScreen').style.display = 'none'">
+      Add to home screen
+    </button>
   </div>
   <script src="script.js"></script>
 </body>
