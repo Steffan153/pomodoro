@@ -1,15 +1,23 @@
-.progress-bar.session { 
-  background: limegreen;  
+body {
+  font-size: 16px;
 }
 
-.progress-bar.break {
-  background: red;
+* {
+  font-size: 1rem;
 }
 
-.progress {
-  height: 40px;
+.material-icons {
+  font-size: 1rem;
 }
 
-.btn {
-  margin-top: 10px;
+button .material-icons {
+  font-size: 1.45rem;
+}
+
+.mdl-progress .bar {
+  border-radius: 7px;
+}
+
+.mdl-progress {
+  height: 15px;
 }

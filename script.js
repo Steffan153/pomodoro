@@ -52,24 +52,23 @@ function go() {
   clean();
   playSound();
   p.innerHTML =
-    `<p>Session:</p>
-    <div class="progress">
-      <div class="session progress-bar" id="prog" style="width: 0%"></div>
-    </div>
+    `<p><i class="material-icons">work</i> Session:</p>
+    <div class="mdl-progress mdl-js-progress" id="prog"></div>
     <p class="mt-3">
       <span id="time">${toTime(sl.value)}</span> 
       time left
     </p>`;
+  componentHandler.upgradeElement(qs("#prog"));
   let secs = 1;
   myInt = setInterval(function() {
     if (inPlay) {
       qs("#time").innerHTML = subTime(qs("#time").innerHTML);
-      qs("#prog").style.width = ((secs / (sl.value * 60)) * 100) + '%';
+      qs("#prog").MaterialProgress.setProgress((secs / (sl.value * 60)) * 100);
       if (secs <= sl.value * 60) {
         secs++;
       } else {
         secs = 1;
-        qs("#prog").style.width = '0%';
+        qs("#prog").MaterialProgress.setProgress(0);
         clearInterval(myInt);
         doBreak();
       }
@@ -89,24 +88,23 @@ function doBreak() {
   clean();
   playSound();
   p.innerHTML =
-    `<p>Break!</p>
-    <div class="progress">
-      <div class="break progress-bar" id="prog" style="width: 0%"></div>
-    </div>
+    `<p><i class="material-icons">free_breakfast</i> Break!</p>
+    <div class="mdl-progress mdl-js-progress" id="prog"></div>
     <p class="mt-3">
       <span id="time">${toTime(bl.value)}</span> 
       time left
     </p>`;
+  componentHandler.upgradeElement(qs("#prog"));
   let secs = 1;
   myInt2 = setInterval(function() {
     if (inPlay) {
       qs("#time").innerHTML = subTime(qs("#time").innerHTML);
-      qs("#prog").style.width = ((secs / (bl.value * 60)) * 100) + '%';
+      qs("#prog").MaterialProgress.setProgress((secs / (bl.value * 60)) * 100);
       if (secs <= bl.value * 60) {
         secs++;
       } else {
         secs = 1;
-        qs("#prog").style.width = '0%';
+        qs("#prog").MaterialProgress.setProgress(0);
         clearInterval(myInt2);
         go();
       }
