@@ -37,3 +37,7 @@ button .material-icons {
   left: 0;
   z-index: 2000;
 }
+
+.mdl-layout__header-row {
+  padding: 0 20px 0 20px;
+}

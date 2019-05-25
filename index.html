@@ -21,23 +21,21 @@
 </head>
 
 <body>
-  <div class="mdl-layout mdl-js-layout">
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <!-- Title -->
+        <span class="mdl-layout-title">Pomo</span>
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation">
+          <button class="mdl-button mdl-js-button mdl-button--icon settings-button">
+            <i class="material-icons">settings</i>
+          </button>
+        </nav>
+      </div>
+    </header>
     <main class="mdl-layout__content">
       <div class="page-content" style="padding-left: 30px; padding-right: 30px; padding-top: 15px">
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="number" id="bl" value="5" onkeydown="ce(event)" min="1">
-          <label class="mdl-textfield__label" for="bl">
-            Break <i class="material-icons">free_breakfast</i> length (min):
-          </label>
-        </div><br />
-        
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="number" id="sl" value="25" onkeydown="ce(event)" min="1">
-          <label class="mdl-textfield__label" for="sl">
-            Session <i class="material-icons">work</i> length (min):
-          </label>
-        </div><br /><br />
-
         <button onclick="go()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
           <i class="material-icons">work</i>
           Go / Get to Work
@@ -63,6 +61,29 @@
       </div>
     </main>
   </div>
+  <dialog id="dialog" class="mdl-dialog">
+    <h3 class="mdl-dialog__title">Settings</h3>
+    <div class="mdl-dialog__content">
+      <p>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="number" id="bl" value="5" min="1">
+          <label class="mdl-textfield__label" for="bl">
+            Break <i class="material-icons">free_breakfast</i> length (min):
+          </label>
+        </div><br />
+        
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="number" id="sl" value="25" min="1">
+          <label class="mdl-textfield__label" for="sl">
+            Session <i class="material-icons">work</i> length (min):
+          </label>
+        </div>
+      </p>
+    </div>
+    <div class="mdl-dialog__actions">
+      <button type="button" class="mdl-button">OK</button>
+    </div>
+  </dialog>
   <audio src="audio.mp3"></audio>
   <div id="addHomeScreen">
     Add "Pomodoro" to home screen? 

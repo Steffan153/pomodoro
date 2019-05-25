@@ -122,7 +122,26 @@ function stop() {
   inPlay = false;
 }
 
+let settingsBtn = qs('.settings-button');
+let dialog = qs('dialog');
 
+settingsBtn.addEventListener('click', function() {
+  dialog.showModal();
+});
+
+if (localStorage.getItem('session-length')) {
+  qs('#sl').value = localStorage.getItem('session-length');
+}
+
+if (localStorage.getItem('break-length')) {
+  qs('#bl').value = localStorage.getItem('break-length');
+}
+
+dialog.querySelector('button').addEventListener('click', function() {
+  localStorage.setItem('session-length', qs('#sl').value);
+  localStorage.setItem('break-length', qs('#bl').value);
+  dialog.close();
+});
 
 /////////////////////////
 ////       PWA       ////
