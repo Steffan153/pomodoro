@@ -98,6 +98,9 @@ document.addEventListener('DOMContentLoaded', function() {
       todos[+li.dataset.index].done = checkbox.checked;
       if (checkbox.checked) {
         li.style.color = '#aaa';
+        let parent = li.parentElement;
+        parent.removeChild(li);
+        parent.appendChild(li);
       } else {
         li.style.color = 'black';
       }
@@ -115,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
       editDialog.showModal();
     });
     li.querySelector('.pom-btn').addEventListener('click', function() {
-      location.href = 'index.html?pomo=' + encodeURIComponent(obj.val);
+      location.href = 'index.html#pomo=' + encodeURIComponent(obj.val);
     });
     todoUL.appendChild(li);
     if (obj.done) {

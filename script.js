@@ -148,10 +148,8 @@ dialog.querySelector('button').addEventListener('click', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-  let searchParams = new URLSearchParams(location.search);
-
-  if (searchParams.get('pomo')) {
-    qs('h3').innerText = searchParams.get('pomo');
+  if (location.hash.startsWith('#pomo=')) {
+    qs('h3').innerText = decodeURIComponent(location.hash.replace('#pomo=', ''));
     go();
   }
 });
