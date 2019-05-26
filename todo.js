@@ -96,6 +96,11 @@ document.addEventListener('DOMContentLoaded', function() {
     let checkbox = li.querySelector('[type="checkbox"]');
     checkbox.addEventListener('click', function() {
       todos[+li.dataset.index].done = checkbox.checked;
+      if (checkbox.checked) {
+        li.style.color = '#777';
+      } else {
+        li.style.color = 'black';
+      }
       store();
     });
     li.querySelector('.mdl-list__item-primary-content').innerText = obj.val;
