@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
     checkbox.addEventListener('click', function() {
       todos[+li.dataset.index].done = checkbox.checked;
       if (checkbox.checked) {
-        li.style.color = '#ccc';
+        li.style.color = '#aaa';
       } else {
         li.style.color = 'black';
       }
