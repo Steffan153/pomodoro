@@ -28,11 +28,6 @@
         <!-- Title -->
         <span class="mdl-layout-title">Pomo</span>
         <div class="mdl-layout-spacer"></div>
-        <nav class="mdl-navigation">
-          <button class="mdl-button mdl-js-button mdl-button--icon settings-button">
-            <i class="material-icons">settings</i>
-          </button>
-        </nav>
       </div>
     </header>
     <div class="mdl-layout__drawer">
@@ -44,55 +39,46 @@
     </div>
     <main class="mdl-layout__content">
       <div class="page-content" style="padding-left: 30px; padding-right: 30px; padding-top: 15px">
-        <button onclick="go()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-          <i class="material-icons">work</i>
-          Go / Get to Work
+        <ul class="mdl-list todos"></ul>
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored btn-float add-button">
+          <i class="material-icons">add</i>
         </button>
-        <button onclick="stop()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-          <i class="material-icons">stop</i>
-          Stop
-        </button>
-        <button onclick="doBreak()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-          <i class="material-icons">free_breakfast</i>
-          I need a Break
-        </button>
-        <button onclick="pause()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-          <i class="material-icons">pause</i>
-          Pause
-        </button>
-        <button onclick="resume()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-          <i class="material-icons">play_arrow</i>
-          Resume
-        </button>
-        <h3 id="pomo-name"></h3>
-        <div id="progress" class="mt-3"></div>
       </div>
     </main>
   </div>
-  <dialog id="dialog" class="mdl-dialog">
-    <h3 class="mdl-dialog__title">Settings</h3>
+  <dialog class="mdl-dialog add-dialog">
+    <h4 class="mdl-dialog__title">Add new Todo</h4>
     <div class="mdl-dialog__content">
-      <p>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="number" id="bl" value="5" min="1">
-          <label class="mdl-textfield__label" for="bl">
-            Break <i class="material-icons">free_breakfast</i> length (min):
-          </label>
-        </div><br />
-        
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="number" id="sl" value="25" min="1">
-          <label class="mdl-textfield__label" for="sl">
-            Session <i class="material-icons">work</i> length (min):
-          </label>
-        </div>
-      </p>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" id="todo-name">
+        <label class="mdl-textfield__label" for="todo-name">Todo name</label>
+      </div>
     </div>
     <div class="mdl-dialog__actions">
-      <button type="button" class="mdl-button">OK</button>
+      <button type="button" class="mdl-button cancel">Cancel</button>
+      <button type="button" class="mdl-button add">Add</button>
     </div>
   </dialog>
-  <audio src="audio.mp3"></audio>
+  <dialog class="mdl-dialog edit-dialog">
+    <h4 class="mdl-dialog__title">Edit Todo</h4>
+    <div class="mdl-dialog__content">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" id="new-todo-name">
+        <label class="mdl-textfield__label" for="new-todo-name">New todo name</label>
+      </div>
+    </div>
+    <div class="mdl-dialog__actions">
+      <button type="button" class="mdl-button cancel">Cancel</button>
+      <button type="button" class="mdl-button ok">OK</button>
+    </div>
+  </dialog>
+  <dialog class="mdl-dialog del-dialog">
+    <h4 class="mdl-dialog__content">Do you really want to delete this todo?</h4>
+    <div class="mdl-dialog__actions">
+      <button type="button" class="mdl-button no">No</button>
+      <button type="button" class="mdl-button yes">Yes</button>
+    </div>
+  </dialog>
   <div id="addHomeScreen">
     Add "Pomodoro" to home screen? 
     <button 
@@ -102,7 +88,7 @@
       Add to home screen
     </button>
   </div>
-  <script src="script.js"></script>
+  <script src="todo.js"></script>
   <script src="app.js"></script>
 </body>
 

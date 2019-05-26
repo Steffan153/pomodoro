@@ -6,7 +6,7 @@ body {
   font-size: 1rem;
 }
 
-.material-icons {
+.material-icons:not(.mdl-layout__header .material-icons) {
   font-size: 1rem;
 }
 
@@ -28,7 +28,7 @@ button .material-icons {
 
 #addHomeScreen {
   color: white;
-  background-color: rgb(63,81,181);
+  background-color: rgb(33,150,243);
   padding: 10px 20px;
   display: none; 
   position: fixed; 
@@ -38,6 +38,24 @@ button .material-icons {
   z-index: 2000;
 }
 
-.mdl-layout__header-row {
-  padding: 0 20px 0 20px;
+.btn-float {
+  position: absolute;
+  z-index: 3000;
+  bottom: 102px;
+  right: 20px;
+}
+
+.mdl-checkbox {
+  height: 20px;
+}
+
+.mdl-list__item {
+  min-height: initial;
+  padding: initial;
+}
+
+@media (display-mode: standalone) {
+  .btn-float {
+    bottom: 50px;
+  }
 }

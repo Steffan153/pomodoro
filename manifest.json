@@ -42,7 +42,7 @@
   "start_url": "/pomodoro/",
   "display": "standalone",
   "background_color": "#fff",
-  "theme_color": "#009688",
+  "theme_color": "#69f0ae",
   "description": "Pomodoro clock",
   "dir": "ltr",
   "lang": "en-US"
