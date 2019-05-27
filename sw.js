@@ -1,4 +1,4 @@
-var CACHE_VERSION = 22;
+var CACHE_VERSION = 24;
 var CACHE_STATIC_NAME = 'static-v' + CACHE_VERSION;
 var CACHE_DYNAMIC_NAME = 'dynamic-v' + CACHE_VERSION;
 
@@ -16,6 +16,7 @@ self.addEventListener('install', function(event) {
         '/pomodoro/index.html',
         '/pomodoro/style.css',
         '/pomodoro/script.js',
+        '/pomodoro/todo.js',
         '/pomodoro/app.js',
         '/pomodoro/audio.mp3',
         '/pomodoro/todo.html'

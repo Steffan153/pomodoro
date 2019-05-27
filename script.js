@@ -19,14 +19,12 @@ function pause() {
   qs('.pause-btn').classList.add('hide');
   qs('.resume-btn').classList.remove('hide');
   inPlay = false;
-  playSound();
 }
 
 function resume() {
   qs('.pause-btn').classList.remove('hide');
   qs('.resume-btn').classList.add('hide');
   inPlay = true;
-  playSound();
 }
 
 function subTime(time) {
@@ -58,7 +56,6 @@ function go() {
   qs('.stop-btn').classList.remove('hide');
   qs('.break-btn').classList.remove('hide');
   clean();
-  playSound();
   p.innerHTML =
     `<p><i class="material-icons">work</i> Session:</p>
     <div class="mdl-progress mdl-js-progress" id="prog"></div>
@@ -68,6 +65,7 @@ function go() {
     </p>`;
   componentHandler.upgradeElement(qs("#prog"));
   let secs = 1;
+  qs("#prog").MaterialProgress.setProgress(0);
   myInt = setInterval(function() {
     if (inPlay) {
       qs("#time").innerHTML = subTime(qs("#time").innerHTML);
@@ -75,10 +73,10 @@ function go() {
       if (secs <= sl.value * 60) {
         secs++;
       } else {
-        secs = 1;
-        qs("#prog").MaterialProgress.setProgress(0);
         clearInterval(myInt);
-        doBreak();
+        pause();
+        playSound();
+        setTimeout(() => qs("#prog").MaterialProgress.setProgress(100), 10);
       }
     }
   }, 1000);
@@ -96,7 +94,6 @@ function doBreak() {
   clean();
   qs('.go-btn').classList.remove('hide');
   qs('.break-btn').classList.add('hide');
-  playSound();
   p.innerHTML =
     `<p><i class="material-icons">free_breakfast</i> Break!</p>
     <div class="mdl-progress mdl-js-progress" id="prog"></div>
@@ -106,6 +103,7 @@ function doBreak() {
     </p>`;
   componentHandler.upgradeElement(qs("#prog"));
   let secs = 1;
+  qs("#prog").MaterialProgress.setProgress(0);
   myInt2 = setInterval(function() {
     if (inPlay) {
       qs("#time").innerHTML = subTime(qs("#time").innerHTML);
@@ -113,17 +111,16 @@ function doBreak() {
       if (secs <= bl.value * 60) {
         secs++;
       } else {
-        secs = 1;
-        qs("#prog").MaterialProgress.setProgress(0);
         clearInterval(myInt2);
-        go();
+        pause();
+        playSound();
+        setTimeout(() => qs("#prog").MaterialProgress.setProgress(100), 10);
       }
     }
   }, 1000);
 };
 
 function stop() {
-  playSound();
   clearInterval(myInt);
   clearInterval(myInt2);
   qs("#sl").disabled = false;
