@@ -16,11 +16,15 @@ function toTime(m) {
 }
 
 function pause() {
+  qs('.pause-btn').classList.add('hide');
+  qs('.resume-btn').classList.remove('hide');
   inPlay = false;
   playSound();
 }
 
 function resume() {
+  qs('.pause-btn').classList.remove('hide');
+  qs('.resume-btn').classList.add('hide');
   inPlay = true;
   playSound();
 }
@@ -49,6 +53,10 @@ function ce(event) {
 }
 
 function go() {
+  qs('.go-btn').classList.add('hide');
+  qs('.pause-btn').classList.remove('hide');
+  qs('.stop-btn').classList.remove('hide');
+  qs('.break-btn').classList.remove('hide');
   clean();
   playSound();
   p.innerHTML =
@@ -86,6 +94,8 @@ function clean() {
 
 function doBreak() {
   clean();
+  qs('.go-btn').classList.remove('hide');
+  qs('.break-btn').classList.add('hide');
   playSound();
   p.innerHTML =
     `<p><i class="material-icons">free_breakfast</i> Break!</p>
@@ -120,6 +130,11 @@ function stop() {
   qs("#bl").disabled = false;
   qs('#progress').innerHTML = '';
   inPlay = false;
+  qs('.go-btn').classList.remove('hide');
+  qs('.stop-btn').classList.add('hide');
+  qs('.break-btn').classList.add('hide');
+  qs('.pause-btn').classList.add('hide');
+  qs('.resume-btn').classList.add('hide');
 }
 
 let settingsBtn = qs('.settings-button');
